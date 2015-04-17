@@ -237,7 +237,7 @@ bool HardCodeNoVibrations = false;
 // This is for people who want old ones too
 // Use for a custom load
 bool HardCodeNoAnimations = false;
-bool HardCodeAllAnimations = false;
+bool HardCodeAllAnimations = true;
 
 // Control Vibrations for Config File
 // IF YOU WANT NO VIBRATIONS, SET TO true
@@ -1251,7 +1251,8 @@ void perfectbg_animation_started(Animation *animation, void *data) {
   
 	// clear out BG and icon
   text_layer_set_text(bg_layer, " ");
-  text_layer_set_text(message_layer, "WHOO HOO!\0");
+//  text_layer_set_text(message_layer, "WHOO HOO!\0");
+  text_layer_set_text(message_layer, "U R DA BOMB!!\0");
   
 } // end perfectbg_animation_started
 
@@ -1512,12 +1513,12 @@ static void load_bg() {
   // happy message; max message 24 characters
   // DO NOT GO OVER 24 CHARACTERS, INCLUDING SPACES OR YOU WILL CRASH
   // YOU HAVE BEEN WARNED
-	char happymsg_buffer111[26] = "EVERYTHING IS AWESOME\0";
-	char happymsg_buffer123[26] = "ABC EASY AS... D*CAN*BE\0";
-	char happymsg_buffer130[26] = "DON'T WORRY BE:)HAPPY\0";
-	char happymsg_buffer65[26] = "STAYIN ALIVE AH,HA,HA,HA\0";
-	char happymsg_buffer200[26] = "SHAKE*IT*OFF  SHAKE IT!\0";
-	char happymsg_buffer300[26] = "PREPARE 4 GLORY! SPARTA!\0";
+	char happymsg_buffer70[26] = "GET LOW GET LOW GET LOW!\0";
+	char happymsg_buffer80[26] = "PRACTICALLY PURRFECT!\0";
+	char happymsg_buffer83[26] = "GRIT POWER! YEAH, BABY!!\0";
+	char happymsg_buffer200[26] = "ARE YOU FUCKING HIGH?\0";
+	char happymsg_buffer300[26] = "FUUUCK THIS!!\0";
+	char happymsg_buffer400[26] = "GOIN 2 DA HEAD SHOP!!\0";
   
 	// CODE START
 	
@@ -1650,23 +1651,23 @@ static void load_bg() {
 
         // EVERY TIME YOU DO A NEW MESSAGE, YOU HAVE TO ALLOCATE A NEW HAPPY MSG BUFFER AT THE TOP OF LOAD BG FUNCTION
         
-        if ((!currentBG_isMMOL) && (current_bg == 123)) {
+        if ((!currentBG_isMMOL) && (current_bg == 400)) {
 		      // ANIMATE HAPPY MSG LAYER     
 		      //APP_LOG(APP_LOG_LEVEL_INFO, "LOAD BG, ANIMATE HAPPY MSG LAYER");
-		      animate_happymsg(happymsg_buffer123);
-        } // animate happy msg layer @ 123
+		      animate_happymsg(happymsg_buffer400);
+        } // animate happy msg layer @ 400
       
-        if ((currentBG_isMMOL) && (current_bg == 65)) {
+        if ((!currentBG_isMMOL) && (current_bg == 70)) {
 		      // ANIMATE HAPPY MSG LAYER     
 		      //APP_LOG(APP_LOG_LEVEL_INFO, "LOAD BG, ANIMATE HAPPY MSG LAYER");
-		      animate_happymsg(happymsg_buffer65);
-        } // animate happy msg layer @ 65
+		      animate_happymsg(happymsg_buffer70);
+        } // animate happy msg layer @ 70
       
         if ( ((!currentBG_isMMOL) && (current_bg == 200)) || ((currentBG_isMMOL) && (current_bg == 110)) ) {
 		      // ANIMATE HAPPY MSG LAYER     
 		      //APP_LOG(APP_LOG_LEVEL_INFO, "LOAD BG, ANIMATE HAPPY MSG LAYER");
 		      animate_happymsg(happymsg_buffer200);
-        } // animate happy msg layer @ 300
+        } // animate happy msg layer @ 200
 		
         if ((!currentBG_isMMOL) && (current_bg == 300)) {
 		      // ANIMATE HAPPY MSG LAYER     
@@ -1676,17 +1677,17 @@ static void load_bg() {
         
         if (HardCodeAllAnimations) {
           // extra animations for those that want them, these are the old ones
-		      if ( ((!currentBG_isMMOL) && (current_bg == 111)) || ((currentBG_isMMOL) && (current_bg == 60)) ) {
+		      if ((!currentBG_isMMOL) && (current_bg == 80)) {
 		        // ANIMATE HAPPY MSG LAYER     
 		        //APP_LOG(APP_LOG_LEVEL_INFO, "LOAD BG, ANIMATE HAPPY MSG LAYER");
-		        animate_happymsg(happymsg_buffer111);
-		      } // animate happy msg layer @ 111
+		        animate_happymsg(happymsg_buffer80);
+		      } // animate happy msg layer @ 80 
         
-		      if ( ((!currentBG_isMMOL) && (current_bg == 130)) || ((currentBG_isMMOL) && (current_bg == 70)) ) {
+		      if ((!currentBG_isMMOL) && (current_bg == 83)) {
 		        // ANIMATE HAPPY MSG LAYER     
 		        //APP_LOG(APP_LOG_LEVEL_INFO, "LOAD BG, ANIMATE HAPPY MSG LAYER");
-		        animate_happymsg(happymsg_buffer130);
-		      } // animate happy msg layer @ 130          
+		        animate_happymsg(happymsg_buffer83);
+		      } // animate happy msg layer @ 83          
         } // HardCodeAllAnimations
         
       } // HardCodeNoAnimations; end all animation code
